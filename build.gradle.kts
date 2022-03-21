@@ -1,43 +1,40 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-import org.springframework.boot.gradle.tasks.bundling.BootBuildImage
 
 plugins {
-	id("org.springframework.boot") version "2.6.4"
-	id("io.spring.dependency-management") version "1.0.11.RELEASE"
-	kotlin("jvm") version "1.6.10"
-	kotlin("plugin.spring") version "1.6.10"
-	id("org.springframework.experimental.aot") version "0.11.3"
+    kotlin("jvm") version "1.6.10"
+    id("org.openjfx.javafxplugin") version "0.0.10"
+    application
 }
 
-group = "net.noncore"
-version = "0.0.1-SNAPSHOT"
-java.sourceCompatibility = JavaVersion.VERSION_11
+group = "me.kenji"
+version = "1.0-SNAPSHOT"
 
 repositories {
-	maven { url = uri("https://repo.spring.io/release") }
-	mavenCentral()
+    mavenCentral()
+}
+
+kotlin {
+    jvmToolchain {
+        (this as JavaToolchainSpec).languageVersion.set(JavaLanguageVersion.of(11))
+    }
 }
 
 dependencies {
-	implementation("org.springframework.boot:spring-boot-starter")
-	implementation("org.jetbrains.kotlin:kotlin-reflect")
-	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-	developmentOnly("org.springframework.boot:spring-boot-devtools")
-	testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation(kotlin("test"))
 }
 
-tasks.withType<KotlinCompile> {
-	kotlinOptions {
-		freeCompilerArgs = listOf("-Xjsr305=strict")
-		jvmTarget = "11"
-	}
+tasks.test {
+    useJUnit()
 }
 
-tasks.withType<Test> {
-	useJUnitPlatform()
+tasks.withType<KotlinCompile>() {
+    kotlinOptions.jvmTarget = "11"
 }
 
-tasks.withType<BootBuildImage> {
-	builder = "paketobuildpacks/builder:tiny"
-	environment = mapOf("BP_NATIVE_IMAGE" to "true")
+application {
+    mainClass.set("net.noncore.XfdApp")
+}
+
+javafx {
+    modules("javafx.controls")
 }
