@@ -6,8 +6,10 @@ plugins {
     application
 }
 
-group = "me.kenji"
+group = "net.noncore"
 version = "1.0-SNAPSHOT"
+
+val tornadofx_version: String by rootProject
 
 repositories {
     mavenCentral()
@@ -20,6 +22,7 @@ kotlin {
 }
 
 dependencies {
+    implementation("no.tornado:tornadofx:$tornadofx_version")
     testImplementation(kotlin("test"))
 }
 
