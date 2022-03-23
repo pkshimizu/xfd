@@ -1,6 +1,6 @@
-package net.noncore
+package net.noncore.xfd
 
-import net.noncore.views.MainView
+import net.noncore.xfd.views.MainView
 import tornadofx.App
 import tornadofx.launch
 

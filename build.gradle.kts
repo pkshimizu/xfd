@@ -35,7 +35,7 @@ tasks.withType<KotlinCompile>() {
 }
 
 application {
-    mainClass.set("net.noncore.XfdApp")
+    mainClass.set("net.noncore.xfd.XfdApp")
 }
 
 javafx {

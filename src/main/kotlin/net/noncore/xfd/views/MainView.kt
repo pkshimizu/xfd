@@ -1,6 +1,6 @@
-package net.noncore.views
+package net.noncore.xfd.views
 
-import net.noncore.Styles
+import net.noncore.xfd.Styles
 import tornadofx.*
 
 class MainView : View("Hello TornadoFX") {
