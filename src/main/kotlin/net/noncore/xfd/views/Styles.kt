@@ -1,4 +1,4 @@
-package net.noncore.xfd
+package net.noncore.xfd.views
 
 import javafx.scene.text.FontWeight
 import tornadofx.Stylesheet
