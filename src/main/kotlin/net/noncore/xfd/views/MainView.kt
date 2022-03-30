@@ -7,5 +7,10 @@ class MainView : View("Hello TornadoFX") {
         label(title) {
             addClass(Styles.heading)
         }
+        button("Open Control Sample View") {
+            action {
+                find<ControlSampleView>().openModal()
+            }
+        }
     }
 }
