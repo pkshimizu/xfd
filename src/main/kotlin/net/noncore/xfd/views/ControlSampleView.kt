@@ -1,7 +1,6 @@
 package net.noncore.xfd.views
 
 import javafx.collections.FXCollections
-import javafx.scene.control.ToggleGroup
 import javafx.scene.paint.Color
 import tornadofx.*
 

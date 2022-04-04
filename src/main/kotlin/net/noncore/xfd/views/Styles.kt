@@ -6,6 +6,11 @@ import tornadofx.box
 import tornadofx.cssclass
 import tornadofx.px
 
+val normalFontSize = 18.px
+val smallFontSize = normalFontSize * 0.8
+val largeFontSize = normalFontSize * 1.2
+val xLargeFontSize = normalFontSize * 1.4
+
 class Styles : Stylesheet() {
     companion object {
         val heading by cssclass()
@@ -14,34 +19,34 @@ class Styles : Stylesheet() {
     init {
         label and heading {
             padding = box(10.px)
-            fontSize = 24.px
+            fontSize = xLargeFontSize
             fontWeight = FontWeight.BOLD
         }
         label and caption {
-            fontSize = 14.px
+            fontSize = smallFontSize
             fontWeight = FontWeight.BOLD
         }
         label {
-            fontSize = 18.px
+            fontSize = normalFontSize
         }
         button {
-            fontSize = 18.px
+            fontSize = normalFontSize
             fontWeight = FontWeight.BOLD
         }
         textField {
-            fontSize = 18.px
+            fontSize = normalFontSize
         }
         checkBox {
-            fontSize = 18.px
+            fontSize = normalFontSize
         }
         comboBox {
-            fontSize = 18.px
+            fontSize = normalFontSize
         }
         toggleButton {
-            fontSize = 18.px
+            fontSize = normalFontSize
         }
         radioButton {
-            fontSize = 18.px
+            fontSize = normalFontSize
         }
     }
 }
