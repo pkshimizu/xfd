@@ -48,5 +48,14 @@ class Styles : Stylesheet() {
         radioButton {
             fontSize = normalFontSize
         }
+        progressIndicator {
+            fontSize = normalFontSize
+        }
+        hyperlink {
+            fontSize = normalFontSize
+        }
+        text {
+            fontSize = normalFontSize
+        }
     }
 }
