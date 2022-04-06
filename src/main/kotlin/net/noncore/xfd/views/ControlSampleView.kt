@@ -6,6 +6,7 @@ import javafx.beans.property.SimpleObjectProperty
 import javafx.beans.property.SimpleStringProperty
 import javafx.collections.FXCollections
 import javafx.scene.control.SelectionMode
+import javafx.scene.control.TreeItem
 import javafx.scene.input.KeyCombination
 import javafx.scene.paint.Color
 import javafx.scene.text.Font
@@ -184,6 +185,15 @@ class ControlSampleView: Fragment() {
                                     textFill = Color.BLACK
                                 }
                             }
+                        }
+                    }
+                }
+                vbox {
+                    label("Tree View")
+                    treeview<String> {
+                        root = TreeItem("Root")
+                        populate { parent ->
+                            if (parent == root) listOf("AAA", "BBB", "CCC") else listOf()
                         }
                     }
                 }
