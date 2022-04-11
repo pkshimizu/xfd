@@ -3,7 +3,7 @@ package net.noncore.xfd.models.data.storage
 import java.io.InputStream
 import java.io.OutputStream
 
-interface File: Resource {
+interface File : Resource {
     val inputStream: InputStream
     val outputStream: OutputStream
     val size: Size

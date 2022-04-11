@@ -15,6 +15,7 @@ class ResourceTableItem(resource: Resource) {
 
 class FolderViewModel : ViewModel() {
     val resourceList = SimpleListProperty<ResourceTableItem>()
+
     init {
         val root = LocalStorage().find(Location("/"))
         if (root is Folder) {

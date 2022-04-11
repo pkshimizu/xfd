@@ -15,7 +15,7 @@ internal abstract class LocalResource(path: Path) : Resource {
     override val location: Location
         get() = Location(file.path)
     override val parent: Folder?
-        get() = if(file.isRooted) null else LocalFolder(file.parentFile.toPath())
+        get() = if (file.isRooted) null else LocalFolder(file.parentFile.toPath())
     override val readable: Boolean
         get() = file.canRead()
     override val writable: Boolean

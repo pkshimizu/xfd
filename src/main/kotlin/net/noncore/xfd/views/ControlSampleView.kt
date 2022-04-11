@@ -15,9 +15,9 @@ import java.time.LocalDate
 import java.time.Period
 import kotlin.concurrent.thread
 
-class ControlSampleView: Fragment() {
+class ControlSampleView : Fragment() {
     val comboboxItems = FXCollections.observableArrayList("Tokyo", "Osaka", "Nagoya", "Sapporo", "Fukuoka")
-    override val root = vbox() {
+    override val root = vbox {
         label("Control Samples")
         scrollpane {
             vbox {
@@ -37,7 +37,7 @@ class ControlSampleView: Fragment() {
                 vbox {
                     label("Text Fields")
                     textfield()
-                    label("Password Field"){
+                    label("Password Field") {
                         addClass(Styles.caption)
                     }
                     passwordfield()
@@ -164,12 +164,14 @@ class ControlSampleView: Fragment() {
                 }
                 vbox {
                     label("Table View")
-                    tableview(listOf(
-                        Person(1,"Samantha Stuart",LocalDate.of(1981,12,4)),
-                        Person(2,"Tom Marks",LocalDate.of(2005,1,23)),
-                        Person(3,"Stuart Gills",LocalDate.of(1989,5,23)),
-                        Person(4,"Nicole Williams",LocalDate.of(1998,8,11))
-                    ).asObservable()) {
+                    tableview(
+                        listOf(
+                            Person(1, "Samantha Stuart", LocalDate.of(1981, 12, 4)),
+                            Person(2, "Tom Marks", LocalDate.of(2005, 1, 23)),
+                            Person(3, "Stuart Gills", LocalDate.of(1989, 5, 23)),
+                            Person(4, "Nicole Williams", LocalDate.of(1998, 8, 11))
+                        ).asObservable()
+                    ) {
                         isEditable = true
                         column("ID", Person::idProperty).makeEditable()
                         column("Name", Person::nameProperty).makeEditable()

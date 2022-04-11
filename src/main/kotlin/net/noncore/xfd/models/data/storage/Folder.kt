@@ -1,6 +1,6 @@
 package net.noncore.xfd.models.data.storage
 
-interface Folder: Resource {
+interface Folder : Resource {
     fun resources(): List<Resource>
     fun createFolder(name: String): Folder
     fun createFile(name: String): File

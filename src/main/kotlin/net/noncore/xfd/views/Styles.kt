@@ -16,6 +16,7 @@ class Styles : Stylesheet() {
         val heading by cssclass()
         val caption by cssclass()
     }
+
     init {
         label and heading {
             padding = box(10.px)
