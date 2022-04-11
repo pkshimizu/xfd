@@ -13,7 +13,7 @@ internal class LocalFolder(path: Path) : LocalResource(path), Folder {
             when {
                 it.isFile -> LocalFile(it.toPath())
                 it.isFile -> LocalFolder(it.toPath())
-                else -> throw UnsupportedOperationException()
+                else -> LocalFile(it.toPath())
             }
         }.toList()
     }

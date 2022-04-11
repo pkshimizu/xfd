@@ -1,11 +1,14 @@
 package net.noncore.xfd.views
 
-import net.noncore.xfd.views.components.ResourceTable
+import net.noncore.xfd.viewmodels.FolderViewModel
+import net.noncore.xfd.viewmodels.ResourceTableItem
 import tornadofx.*
 
 class FolderView : View() {
-    val resourceTable: ResourceTable by inject()
+    val vm : FolderViewModel by inject()
     override val root = borderpane {
-        center = resourceTable.root
+        center = tableview(vm.resourceList) {
+            column("Name", ResourceTableItem::name)
+        }
     }
 }
