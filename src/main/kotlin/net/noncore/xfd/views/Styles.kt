@@ -15,6 +15,7 @@ class Styles : Stylesheet() {
     companion object {
         val heading by cssclass()
         val caption by cssclass()
+        val noHeader by cssclass()
     }
 
     init {
@@ -57,6 +58,13 @@ class Styles : Stylesheet() {
         }
         text {
             fontSize = normalFontSize
+        }
+        tableView and noHeader {
+            columnHeaderBackground {
+                maxHeight = 0.px
+                prefHeight = 0.px
+                minHeight = 0.px
+            }
         }
     }
 }
